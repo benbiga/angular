@@ -1,0 +1,11 @@
+ngModal = implementing two way binding 
+ 
+(email is a componenet property)
+
+
+<input [value] = "email" .... ==> One way Binding Comp --> View
+
+<input [(ngModal)] = "email" ==> two way binding
+
+** to use two way binding we should import : Forms Module from '@angular/forms'
+and add it to imports in app.module.ts
