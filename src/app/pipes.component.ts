@@ -4,7 +4,7 @@ import {Component} from '@angular/core';
     selector : 'pipesData',
     template : `
     <div class="container">
-        {{course.title | lowercase}}<br/>
+        {{course.title | summary : 30| lowercase}}<br/>
         {{course.rating | number:'1.3'}}<br/>
         {{course.students | number}}<br/>
         {{course.price | currency:'DHs'}}<br/>
@@ -15,7 +15,7 @@ import {Component} from '@angular/core';
 export class PipesComponent{
 
     course = {
-        title :"The complete angular course",
+        title :"The complete angular course The complete angular course The complete angular course The complete angular course The complete angular course",
         rating: 4.0123,
         students:   30123,
         price:  190.25,

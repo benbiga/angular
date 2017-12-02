@@ -1,0 +1,5 @@
+<div class="container">
+        <span class="glyphicon " [class.glyphicon-star]="isLiked" [class.glyphicon-star-empty]="!isLiked" (click)="onClick()"></span>
+        <br/><input [(ngModel)]="movieTitle" (keyup.enter)="formatTitle()" />
+        <p>{{movieTitle | caseTitle}}</p>
+</div>

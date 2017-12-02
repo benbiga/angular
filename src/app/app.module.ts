@@ -1,3 +1,4 @@
+import { titlecase } from './titleCase.component';
 import { PipesComponent } from './pipes.component';
 import { AuthorsComponent } from './authors.component';
 import { AuthosService } from './authors.service';
@@ -7,13 +8,18 @@ import { FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 import {CoursesComponent} from './courses.component'
 import { AppComponent } from './app.component';
+import {SummaryPipe} from './CustomPipe.component'
+import { LikeComponent } from './like.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CoursesComponent,
     AuthorsComponent,
-    PipesComponent
+    PipesComponent,
+    SummaryPipe,
+    LikeComponent,
+    titlecase
   ],
   imports: [
     BrowserModule,
