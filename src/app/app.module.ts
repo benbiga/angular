@@ -10,6 +10,8 @@ import {CoursesComponent} from './courses.component'
 import { AppComponent } from './app.component';
 import {SummaryPipe} from './CustomPipe.component'
 import { LikeComponent } from './like.component';
+import { ZippyComponent } from './zippy/zippy.component';
+import { ContactFormComponent } from './contact-form/contact-form.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,9 @@ import { LikeComponent } from './like.component';
     PipesComponent,
     SummaryPipe,
     LikeComponent,
-    titlecase
+    titlecase,
+    ZippyComponent,
+    ContactFormComponent
   ],
   imports: [
     BrowserModule,

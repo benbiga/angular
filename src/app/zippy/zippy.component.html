@@ -1,0 +1,8 @@
+<div class="zippy">
+  <div class="zippy-heading" (click)="onClick()">
+    {{ title }} <span class="glyphicon" [ngClass]="{'glyphicon-chevron-down' : !isClicked, 'glyphicon-chevron-up' : isClicked}"></span>
+  </div>
+  <div class="zippy-body" *ngIf="isClicked">
+    <ng-content></ng-content>
+  </div>
+</div>
