@@ -1,4 +1,4 @@
-<form class="container">
+<form class="container" #formModel="ngForm" (ngSubmit)="submit(formModel)">
   <div class="form-group">
       <label for="firstName">First name : </label>
       <input ngModel name="firstName" #firstName="ngModel" (change)="log(firstName)" id="firstName" type="text" class="form-control" required minlength="3" maxlength="10" pattern="banana"/>
@@ -11,7 +11,23 @@
   </div>
   <div class="form-group">
     <label for="comment">Comment : </label>
-    <textarea class="form-control" id="comment" cols="30" rows="10"></textarea>
+    <textarea class="form-control" ngModel name="comment" #comment="ngModel" id="comment" cols="30" rows="10" required></textarea>
+    <div class="alert alert-danger" *ngIf="comment.touched && comment.invalid">The comment is required</div>
   </div>
-  <button class="btn btn-primary">Submit</button>
+  <div class="checkbox">
+    <label><input type="checkbox" ngModel name="isSibscribed"> Subscribed to mailling list
+    </label>
+  </div>
+  <div class="form-group">
+    <label for="contactMethod">Contact method</label>
+    <select multiple id="contactMethod" class="form-control" ngModel name="contactMethod">
+      <option value="">Select a method</option>
+      <option *ngFor="let contactMethod of contactMethods" [ngValue]="contactMethod">{{ contactMethod.name }}</option>
+    </select>
+  </div>
+  <div class="radio" *ngFor="let method of contactMethods">
+    <label><input type="radio" name="contact" [value]="method.id" ngModel>{{ method.name }}</label>
+</div>
+  <p> {{ formModel.value | json }} </p>
+  <button class="btn btn-primary" [disabled]="formModel.invalid">Submit</button>
 </form>
